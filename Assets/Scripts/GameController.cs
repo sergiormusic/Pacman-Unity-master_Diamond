@@ -97,9 +97,15 @@ public class GameController : MonoBehaviour
         LivesDisplay.text = "Lives: " + _lives;
     }
 
-    public void MenuRestart()
+	public void MainMenuButton()//BC function to return to the main menu
+	{
+	SceneManager.LoadScene ("MainMenu");
+	}
+	public void MenuRestart()
     {
-		SceneManager.LoadScene ("MainMenu");
+        this.Reset();
+        this.MenuContinue();
+        this._cage.StartGhosts();
     }
     public void MenuContinue()
     {
