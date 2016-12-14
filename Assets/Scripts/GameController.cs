@@ -2,6 +2,7 @@
 using Pacman.Map;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //BC used for calling back the main menu after game is
 
 public class GameController : MonoBehaviour
 {
@@ -98,9 +99,7 @@ public class GameController : MonoBehaviour
 
     public void MenuRestart()
     {
-        this.Reset();
-        this.MenuContinue();
-        this._cage.StartGhosts();
+		SceneManager.LoadScene ("MainMenu");
     }
     public void MenuContinue()
     {

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6cccc850270174e1d8e15ee0436fd492
+timeCreated: 1481675221
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - playButton: {fileID: 2800000, guid: 15316d385eea7406da405ad2463f4229, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
