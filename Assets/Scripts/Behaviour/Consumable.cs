@@ -7,6 +7,8 @@ public class Consumable : MonoBehaviour
 
     public int ScoreValue;
     protected GameController controller;
+	AudioSource Audio;
+	public AudioClip Beep;
 
 	// Use this for initialization
 	protected void Start ()
@@ -21,14 +23,20 @@ public class Consumable : MonoBehaviour
 	    {
 	        Debug.LogError("Can't find GameController!");
 	    }
+		Audio = GetComponent<AudioSource> ();
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            this.Consumed();
-        }
+
+		if (other.tag == "Player") {
+			this.Consumed ();
+
+			// Added by Kristian Veech
+			// Beep plays when a dot is "consumed"
+			Audio.PlayOneShot (Beep, 0.7F);
+			Debug.Log ("beep");
+		}
     }
 
     /// <summary>
@@ -37,7 +45,7 @@ public class Consumable : MonoBehaviour
     protected virtual void Consumed()
     {
         controller.DotConsumed(this.ScoreValue);
-        Destroy(gameObject);
+        Destroy(gameObject, 0.6f);
     }
 
 }
