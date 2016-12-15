@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuNav : MonoBehaviour {
 
-	public Texture playButton;
+	public Texture playButton; //BC a testure to hold the image of the play button
 
 	// Use this for initialization
 	void Start () {
