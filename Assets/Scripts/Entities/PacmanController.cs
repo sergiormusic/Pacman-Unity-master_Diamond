@@ -56,12 +56,21 @@ public class PacmanController : MonoBehaviour
 	    transform.Translate(GetDirection() * Speed * Time.deltaTime);
 	}
 
+
+
     private Vector3 GetDirection()
     {
+
         // Find the desired next direction:
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        if (vertical > 0)
+
+		/*if (Input.GetAxis("Horizontal") > 0) _nextDirection = Vector3.right;
+		if (Input.GetAxis("Horizontal") < 0) _nextDirection = -Vector3.right;
+		if (Input.GetAxis("Vertical") > 0) _nextDirection = Vector3.up;
+		if (Input.GetAxis("Vertical") < 0) _nextDirection = -Vector3.up;
+*/
+		if (vertical > 0)
         {
             // Going Up:
             _nextDirection = Vector3.forward;
